@@ -1,11 +1,18 @@
 Template.xymonfe.helpers({
-  host: function() {
-    console.log("host");
-    return xymon.get('xymon::*::test');
+  hostname: function(key) {
+    retval = key.split("::");
+    $("#vlabel_"+retval[2]).css("background-color", retval[4]);
+    return retval[2]
   },
 
-  test: function() {
-    console.log("test");
-    return xymon.get('xymon::*::color');
+  info: function(key) {
+    console.log(retval[3], retval[4]);
+    return retval[3]
+  },
+
+  xymon: function() {
+    var retval =  xymon.matching('xymon::*').fetch();
+    console.log(retval);
+    return retval;
   }
 });

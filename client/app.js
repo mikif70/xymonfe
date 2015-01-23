@@ -1,9 +1,8 @@
 Tracker.autorun(function () {
     Session.setDefault('now', new Date());
-    Meteor.subscribe('mail', function() {
-      console.log("mail");
+    Meteor.subscribe('xymon', function() {
+      console.log("xymon");
       var retval = xymon.matching('xymon::*');
-      console.log(retval);
       return retval;
     });
 });

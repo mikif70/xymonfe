@@ -1,3 +1,3 @@
-Meteor.publish("mail", function() {
+Meteor.publish("xymon", function() {
   return xymon.matching("xymon::*");
 });
