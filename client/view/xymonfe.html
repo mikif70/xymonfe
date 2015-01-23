@@ -1,0 +1,15 @@
+<template name="xymonfe">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <div class="label label-success">xymonfe</div>
+          <br>
+          {{#each mail}}
+            <div class="label label-default">CPU: {{cpu}}</div>
+            <br>
+            <div class="label label-warning">RAM: {{ram}}</div>
+          {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

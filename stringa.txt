@@ -1,0 +1,29 @@
+ws-1.srm.tiscali.sys|ntpq|green||1420021731|1422029749|1422031549|0|0|10.39.104.215||green Fri Jan 23 17:15:49 2015 - ntpq OK
+ws-1.srm.tiscali.sys|exim|green||1415711874|1422029749|1422031549|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015
+ws-1.srm.tiscali.sys|memory|green||1415711544|1422029754|1422031554|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015 - Memory OK
+ws-1.srm.tiscali.sys|files|clear||1415711544|1422029754|1422031554|0|0|10.39.104.215||clear Fri Jan 23 17:15:49 CET 2015 - Files ok
+ws-1.srm.tiscali.sys|msgs|green||1418996836|1422029754|1422031554|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015 - System logs ok
+ws-1.srm.tiscali.sys|ports|green||1415711544|1422029754|1422031554|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015 - Ports ok
+ws-1.srm.tiscali.sys|procs|green||1415711544|1422029754|1422031554|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015 - Processes ok
+ws-1.srm.tiscali.sys|disk|green||1415711544|1422029754|1422031554|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015 - Filesystems ok
+ws-1.srm.tiscali.sys|cpu|green||1415711544|1422029754|1422031554|0|0|10.39.104.215||green Fri Jan 23 17:15:49 CET 2015 up: 126 days, 1 users, 94 procs, load=0.01
+ws-1.srm.tiscali.sys|conn|green|OrdAstLe|1415633243|1422029585|1422031385|0|0|10.39.109.73||green <!-- [flags:OrdAstLe] --> Fri Jan 23 17:12:56 2015 conn ok
+ws-2.srm.tiscali.sys|trends|green||0|0|0|0|0|||
+ws-2.srm.tiscali.sys|info|green||0|0|0|0|0|||
+ws-2.srm.tiscali.sys|heartbeat|green||1420025923|1422029823|1422031623|0|0|10.39.104.216||green HEARTBEAT<br> Fri Jan 23 17:17:03 CET 2015<br><h2>Ok: 2 nodes online, 6 resources configured</h2><br>Content-type: text/html
+ws-2.srm.tiscali.sys|ntpq|green||1420021753|1422029823|1422031623|0|0|10.39.104.216||green Fri Jan 23 17:17:03 2015 - ntpq OK
+ws-2.srm.tiscali.sys|exim|green||1415711873|1422029823|1422031623|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015
+ws-2.srm.tiscali.sys|memory|green||1415711544|1422029828|1422031628|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015 - Memory OK
+ws-2.srm.tiscali.sys|files|clear||1415711544|1422029828|1422031628|0|0|10.39.104.216||clear Fri Jan 23 17:17:03 CET 2015 - Files ok
+ws-2.srm.tiscali.sys|msgs|green||1421854166|1422029828|1422031628|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015 - System logs ok
+ws-2.srm.tiscali.sys|ports|green||1415711544|1422029828|1422031628|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015 - Ports ok
+ws-2.srm.tiscali.sys|procs|green||1415711544|1422029828|1422031628|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015 - Processes ok
+ws-2.srm.tiscali.sys|disk|green||1415711544|1422029828|1422031628|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015 - Filesystems ok
+ws-2.srm.tiscali.sys|cpu|green||1420631619|1422029828|1422031628|0|0|10.39.104.216||green Fri Jan 23 17:17:03 CET 2015 up: 88 days, 0 users, 89 procs, load=1.21
+ws-2.srm.tiscali.sys|conn|green|OrdAstLe|1418526986|1422029585|1422031385|0|0|10.39.109.73||green <!-- [flags:OrdAstLe] --> Fri Jan 23 17:12:56 2015 conn ok
+ws-pub-1.mgm.tiscali.sys|trends|green||0|0|0|0|0|||
+ws-pub-1.mgm.tiscali.sys|info|green||0|0|0|0|0|||
+ws-pub-1.mgm.tiscali.sys|procs|green||1421318306|1422029606|1422031406|0|0|10.39.80.81||green Fri Jan 23 17:13:26 CET 2015 All processes are OK
+ws-pub-1.mgm.tiscali.sys|msgs|green||1421318306|1422029606|1422031406|0|0|10.39.80.81||green Fri Jan 23 17:13:25 CET 2015 All message files OK
+ws-pub-1.mgm.tiscali.sys|cpu|clear||1421318305|1422029605|1422031405|0|0|10.39.80.81||clear Fri Jan 23 17:13:25 CET 2015  Cpu test disabled
+ws-pub-1.mgm.tiscali.sys|disk|green||1421318305|1422029605|1422031405|0|0|10.39.80.81||green Fri Jan 23 17:13:25 CET 2015 - Disk partitions on ws-pub-1.mgm.tiscali.sys OK
