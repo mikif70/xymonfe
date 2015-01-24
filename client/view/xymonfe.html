@@ -5,9 +5,10 @@
                 <div class="label label-success">xymonfe</div>
                 <br>
                 {{#each xymon}}
+                    <div class="label label-default">SERVICE: {{service key}}</div>
                     <div class="label label-default">HOST: {{hostname key}}</div>
-                    <div class="label label-primary">INFO: {{info key}}</div>
-                    <div class="label label-info" id="vlabel_{{hostname key}}">{{value}}</div>
+                    <div class="label label-primary">TEST: {{info key}}</div>
+                    <div class="label label-info" id="label_{{key}}">{{val key value}}</div>
                     <br>
                 {{/each}}
             </div>
