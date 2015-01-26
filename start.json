@@ -1,12 +1,21 @@
 {
-  "name" : "xymonfe",
-  "script" : "main.js",
-  "MAIL_URL":"",
-  "MONGO_URL":"",
-  "REDIS_URL": "redis://10.39.81.90:6379",
-  "ROOT_URL":"http://noc.monitoring.tiscali.sys",
-  "PORT":"8000",
-  "PRODUCTION": "true",
-  "out_file":"/var/log/meteor/xymonfe.log",
-  "error_file":"/var/log/meteor/xymonfe.err"
+  "apps" : [{
+    "name"        : "xymonfe",
+    "script"      : "main.js",
+    "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+    "exec_mode"  : "cluster_mode",
+    "watch"       : true,
+    "instance"    : 3,
+    "cwd"         : "/root/xymonfe.exe/bundle",
+    "log_file"   : "/var/log/meteor/xymonfe.log",
+    "out_file":"/var/log/meteor/xymonfe-out.log",
+    "error_file":"/var/log/meteor/xymonfe.err"
+    "env": {
+      "REDIS_URL": "redis://10.39.81.90:6379",
+      "ROOT_URL":"http://noc.monitoring.tiscali.sys",
+      "PORT":"8000",
+      "MAIL_URL":"",
+      "MONGO_URL":""
+    }
+  }]
 }
