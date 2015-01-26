@@ -1,8 +1,8 @@
 #!/bin/bash
 
 export REDIS_CONFIGURE_KEYSPACE_NOTIFICATIONS=1
-export REDIS_URL=redis://127.0.0.1:6379
-export ROOT_URL='http://xymonfe.tiscali.sys'
+export REDIS_URL=redis://10.39.81.90:6379
+export ROOT_URL='http://noc.monitoring.tiscali.sys'
 #export MAIL_URL='smtp://user:pass@server:port/'
 export PRODUCTION='false'
 export PORT=8000

@@ -1,0 +1,12 @@
+{
+  "name" : "xymonfe",
+  "script" : "main.js",
+  "MAIL_URL":"",
+  "MONGO_URL":"",
+  "REDIS_URL": "redis://10.39.81.90:6379",
+  "ROOT_URL":"http://noc.monitoring.tiscali.sys",
+  "PORT":"8000",
+  "PRODUCTION": "true",
+  "out_file":"/var/log/meteor/xymonfe.log",
+  "error_file":"/var/log/meteor/xymonfe.err"
+}

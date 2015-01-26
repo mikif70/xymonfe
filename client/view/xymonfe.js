@@ -4,7 +4,7 @@ Template.xymonfe.helpers({
     var dbq =  xymon.matching('xymon::*').fetch();
     var i = 0;
     dbq.forEach(function(d) {
-      d["index"] = i;
+//      d["index"] = i;
       sp = d["key"].split("::");
       d["service"] = sp[1];
       d["host"] = sp[2];
