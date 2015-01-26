@@ -9,9 +9,10 @@
     "cwd"         : "/root/xymonfe.exe/bundle",
     "log_file"   : "/var/log/meteor/xymonfe.log",
     "out_file":"/var/log/meteor/xymonfe-out.log",
-    "error_file":"/var/log/meteor/xymonfe.err"
+    "error_file":"/var/log/meteor/xymonfe.err",
     "env": {
-      "REDIS_URL": "redis://10.39.81.90:6379",
+      "REDIS_CONFIGURE_KEYSPACE_NOTIFICATIONS":"1",
+      "REDIS_URL": "redis://10.39.109.78:6379",
       "ROOT_URL":"http://noc.monitoring.tiscali.sys",
       "PORT":"8000",
       "MAIL_URL":"",

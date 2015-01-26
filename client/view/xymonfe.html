@@ -1,19 +1,39 @@
 <template name="xymonfe">
     <div class="container">
         <div class="row">
-            <div class="col-md">
-                <div class="label label-success">xymonfe</div>
+            <div class="label label-success">xymonfe</div>
                 <br>
-                {{#each xymon}}
-                    <h3>
-                        SERVICE: {{service}}<br>
-                        <span class="label label-default">HOST: {{host}}</span>
-                        <span class="label label-primary">TEST: {{test}}</span>
-                        <span class="label label-info" style="background-color: {{color}}">{{val}}</span>
-                    </h3>
-                    <br>
-                {{/each}}
+                {{#with Xymon}}
+                    {{#each NewServices this}}
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading" style="color: {{this.color}}">
+                                    {{this}}
+                                </div>
+                                <div class="body">
+                                    <div class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Hostname</th>
+                                                <th>Test</th>
+                                                <th>Timestamp</th>
+                                            </tr>
+                                        </thead>
+                                        {{#each NewHosts this}}
+                                            <tbody>
+                                                <tr>
+                                                    <td style="background-color: {{this.color}}">{{this.host}}</td>
+                                                    <td style="background-color: {{this.color}}">{{this.test}}</td>
+                                                    <td style="background-color: {{this.color}}">{{this.timestamp}}</td>
+                                                </tr>
+                                            </tbody>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/with}}
             </div>
         </div>
-    </div>
 </template>

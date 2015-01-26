@@ -1,21 +1,45 @@
+var objects = [];
+
 Template.xymonfe.helpers({
 
-  xymon: function() {
-    var dbq =  xymon.matching('xymon::*').fetch();
-    var i = 0;
-    dbq.forEach(function(d) {
-//      d["index"] = i;
+  Xymon: function() {
+    objects =  xymon.matching('xymon::*').fetch();
+    var ind = 0;
+    objects.forEach(function(d) {
       sp = d["key"].split("::");
       d["service"] = sp[1];
-      d["host"] = sp[2];
+      d["host"] = sp[2].replace(".tiscali.sys", "");
       d["test"] = sp[3];
+      delete d['key'];
       vl = d["value"].split("::");
       d["color"] = vl[0];
-      d["val"] = vl[1];
-      console.log(d);
-      i++;
+      d["timestamp"] = vl[1];
+      delete d['value'];
+      d["index"] = ind;
+      ind++;
     });
-    console.log(dbq);
-    return dbq;
+//    console.log("Xymon: ",objects);
+    return objects;
+  },
+
+  NewServices: function(val) {
+    var retval = [];
+    val.forEach(function(v) {
+      if (retval.indexOf(v["service"]) < 0 ) {
+        retval.push(v["service"]);
+      }
+    });
+//    console.log("NewService: ", retval);
+    return retval;
+  },
+
+  NewHosts: function(val) {
+    var retval = []
+    objects.forEach( function(o) {
+      if (o["service"] === val) {
+        retval.push(o);
+      }
+    });
+    return retval;
   }
 });
