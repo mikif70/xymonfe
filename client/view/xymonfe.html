@@ -6,31 +6,19 @@
                 {{#with Xymon}}
                     {{#each NewServices this}}
                         <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading" style="color: {{this.color}}">
-                                    {{this}}
+                            <span class="label label-primary">
+                                {{this}}
+                            </span>
+                            {{#each NewHosts this}}
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">{{this.host}}</h4>
                                 </div>
-                                <div class="body">
-                                    <div class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Hostname</th>
-                                                <th>Test</th>
-                                                <th>Timestamp</th>
-                                            </tr>
-                                        </thead>
-                                        {{#each NewHosts this}}
-                                            <tbody>
-                                                <tr>
-                                                    <td style="background-color: {{this.color}}">{{this.host}}</td>
-                                                    <td style="background-color: {{this.color}}">{{this.test}}</td>
-                                                    <td style="background-color: {{this.color}}">{{this.timestamp}}</td>
-                                                </tr>
-                                            </tbody>
-                                        {{/each}}
-                                    </div>
+                                <div class="panel-body">
+                                    {{this.test}} <span class="badge" style="background-color: {{this.color}}; color: black">{{this.timestamp}}</span>
                                 </div>
                             </div>
+                            {{/each}}
                         </div>
                     {{/each}}
                 {{/with}}
