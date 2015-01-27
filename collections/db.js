@@ -3,3 +3,4 @@ Streamago = new Mongo.Collection("streamago");
 Mailaccess = new Mongo.Collection("mailaccess");
 WebArea = new Mongo.Collection("web-area");
 VasArea = new Mongo.Collection("vas-area");
+Services = new Mongo.Collection("services");

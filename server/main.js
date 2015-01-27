@@ -18,6 +18,10 @@ Meteor.publish("vas-area", function() {
   return VasArea.find();
 });
 
+Meteor.publish("services", function() {
+  return Services.find();
+});
+
 
 Meteor.methods({
 

@@ -4,7 +4,7 @@
 
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
+  color: #7c7c7c;
 }
 
 
@@ -33,6 +33,17 @@ body {
   width: auto;
 }
 
+.nav-serv {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.centered { text-align:center; }
+.centered ul.nav-pills { display:inline-block; }
+.centered li { display:inline; }
+.centered a { float:left; }
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -53,7 +64,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 800px;
-  background-color: #777;
+  background-color: #aaa;
 }
 
 /*
@@ -81,6 +92,10 @@ body {
   margin-right: 10px;
   margin-left: 10px;
 }
+
+/* Labels
+---------------------------*/
+
 
 
 /* Featurettes
