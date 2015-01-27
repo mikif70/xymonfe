@@ -36,7 +36,19 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>{{name}}</h1>
-                        {{> boxrow}}
+                        {{#each Box name}}
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 placeholder">
+                                <h2>
+                                    <span class="label label-primary">
+                                        Host
+                                        {{name}}
+                                        Timestamp
+                                    </span>
+                                </h2>
+                            </div>
+                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -55,45 +67,3 @@
     </div>
 
 </template>
-
-<template name="boxrow">
-    <div class="row">
-        <div class="col-xs-6 col-sm-3 placeholder">
-            {{> box}}
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            {{> box}}
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            {{> box}}
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            {{> box}}
-        </div>
-    </div>
-</template>
-
-<template name="box">
-    <h2>
-        <span class="label label-primary">
-            Label
-        </span>
-    </h2>
-</template>
-
-<template name="streamago">
-
-</template>
-
-<template name="mailaccess">
-
-</template>
-
-<template name="web-area">
-
-</template>
-
-<template name="vas-area">
-
-</template>
-

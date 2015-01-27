@@ -15,11 +15,7 @@ Template.xymonfe.rendered = function() {
     } else {
       $("#pill_"+(item-1)).removeClass("active");
     }
-
-    console.log("Slide", item);
   });
-
-  console.log(Services.find().fetch());
 
 }
 
@@ -41,5 +37,11 @@ Template.xymonfe.helpers({
     totServices = ind-1;
 
     return servs;
+  },
+
+  Box: function(name) {
+    console.log(name);
+    return [{name: "1"},{name: "2"},{name: "3"},{name: "4"}]
   }
+
 });

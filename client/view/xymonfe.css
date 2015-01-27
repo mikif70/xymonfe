@@ -44,6 +44,27 @@ body {
 .centered li { display:inline; }
 .centered a { float:left; }
 
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: gray; /*#337ab7;*/
+}
+
+.red {
+    color: white;
+    background-color: red !important;
+}
+
+.yellow {
+    color: black;
+    background-color: yellow !important;
+}
+
+.green {
+    color: white;
+    background-color: green !important;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
