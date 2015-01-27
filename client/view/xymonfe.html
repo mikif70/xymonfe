@@ -1,27 +1,128 @@
 <template name="xymonfe">
-    <div class="container">
-        <div class="row">
-            <div class="label label-success">xymonfe</div>
-                <br>
-                {{#with Xymon}}
-                    {{#each NewServices this}}
-                        <div class="col-md-4">
-                            <span class="label label-primary">
-                                {{this}}
-                            </span>
-                            {{#each NewHosts this}}
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">{{this.host}}</h4>
-                                </div>
-                                <div class="panel-body">
-                                    {{this.test}} <span class="badge" style="background-color: {{this.color}}; color: black">{{this.timestamp}}</span>
-                                </div>
-                            </div>
-                            {{/each}}
-                        </div>
-                    {{/each}}
-                {{/with}}
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Xymon</a>
             </div>
-        </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="xymonCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#xymonCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#xymonCarousel" data-slide-to="1"></li>
+        <li data-target="#xymonCarousel" data-slide-to="2"></li>
+        <li data-target="#xymonCarousel" data-slide-to="3"></li>
+        <li data-target="#xymonCarousel" data-slide-to="4"></li>
+      </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Indoona.</h1>
+                        {{> boxrow}}
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Streamago</h1>
+                        {{> boxrow}}
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Mail</h1>
+                        {{> boxrow}}
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Web</h1>
+                        {{> boxrow}}
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Vas</h1>
+                        {{> boxrow}}
+                    </div>
+                </div>
+            </div>
+      </div>
+      <a class="left carousel-control" href="#xymonCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#xymonCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
 </template>
+
+<template name="boxrow">
+    <div class="row">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <h2>
+                <span class="label label-primary">
+                    Label
+                </span>
+            </h2>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <h2>
+                <span class="label label-primary">
+                    Label
+                </span>
+            </h2>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <h2>
+                <span class="label label-primary">
+                    Label
+                </span>
+            </h2>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <h2>
+                <span class="label label-primary">
+                    Label
+                </span>
+            </h2>
+        </div>
+    </div>
+</template>
+
+<template name="streamago">
+
+</template>
+
+<template name="mailaccess">
+
+</template>
+
+<template name="web-area">
+
+</template>
+
+<template name="vas-area">
+
+</template>
+

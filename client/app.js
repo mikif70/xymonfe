@@ -1,8 +1,7 @@
 Tracker.autorun(function () {
-    Session.setDefault('now', new Date());
-    Meteor.subscribe('xymon', function() {
-      console.log("xymon");
-      var retval = xymon.matching('xymon::*');
-      return retval;
-    });
+  Meteor.subscribe('indoona');
+  Meteor.subscribe('streamago');
+  Meteor.subscribe('mailaccess');
+  Meteor.subscribe('web-area');
+  Meteor.subscribe('vas-area');
 });
