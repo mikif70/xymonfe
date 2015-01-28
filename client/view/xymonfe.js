@@ -1,4 +1,14 @@
+var now = new ReactiveVar(new Date() / 1000);
+var interval = Meteor.setInterval(function () {
+  console.log("Old Time: ", now.get());
+  now.set(new Date().getTime() / 1000);
+  console.log("New Time: ", now.get());
+}, 30000);
 var totServices = 0;
+
+Template.xymonfe.destroyed = function() {
+  Meteor.clearInterval(interval);
+};
 
 Template.xymonfe.rendered = function() {
   $('#xymonCarousel').carousel({
@@ -53,11 +63,26 @@ Template.box.helpers({
 
   Color: function(color) {
     if (color != 'red' && color != 'yellow') {
-      console.log("Empty color: ", color);
+//      console.log("Empty color: ", color);
       return "";
     }
 
-    console.log(color);
+//    console.log(color);
     return color;
+  },
+
+  Time: function(time) {
+    var retval;
+    var diff = Math.round(now.get() - time);
+//    console.log(diff);
+    if (diff < 60 ) {
+      retval = diff+" sec";
+    } else if ( diff > 60 && diff < 3600 ) {
+      retval = Math.round(diff/60) + " min";
+    } else {
+      retval = Math.round(diff/3600) + " hour";
+    }
+    return retval;
+
   }
 });

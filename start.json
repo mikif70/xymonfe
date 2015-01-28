@@ -11,12 +11,10 @@
     "out_file":"/var/log/meteor/xymonfe-out.log",
     "error_file":"/var/log/meteor/xymonfe.err",
     "env": {
-      "REDIS_CONFIGURE_KEYSPACE_NOTIFICATIONS":"1",
-      "REDIS_URL": "redis://10.39.109.78:6379",
       "ROOT_URL":"http://noc.monitoring.tiscali.sys",
       "PORT":"8000",
       "MAIL_URL":"",
-      "MONGO_URL":""
+      "MONGO_URL":"mongodb://127.0.0.1:27017/xymon"
     }
   }]
 }
