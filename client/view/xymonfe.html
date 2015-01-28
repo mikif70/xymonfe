@@ -4,14 +4,14 @@
 
         <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
-                <div class="navbar-header">
+<!--                <div class="navbar-header">
                     <strong><a class="navbar-brand" href="#" style="color: #fff;">Xymon</a></strong>
-                </div>
+                </div> -->
                 <div id="navbar" class="navbar-collapse collapse">
                     <div class="centered">
                         <ul class="nav nav-pills nav-serv">
                             {{#each Slide}}
-                            <li role="presentation" class="{{class}}" id="pill_{{id}}"><a>{{name}}</a></li>
+                            <li role="presentation" id="pill_{{name}}"><a>{{Name}}</a></li>
                             {{/each}}
                         </ul>
                     </div>
@@ -27,7 +27,7 @@
       <!-- Indicators -->
       <ol class="carousel-indicators">
           {{#each Slide}}
-            <li data-target="#xymonCarousel" data-slide-to="{{id}}" class="{{class}}" id="slide_{{id}}"></li>
+            <li data-target="#xymonCarousel" data-slide-to="{{id}}" class="{{class}}" id="slide_{{name}}"></li>
           {{/each}}
       </ol>
         <div class="carousel-inner" role="listbox">
@@ -35,7 +35,7 @@
             <div class="item {{class}}" id="inner_{{id}}">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>{{Name}}</h1>
+                    <h1 style="color: black;" id="name_{{name}}">{{Name}}</h1>
                         <div class="row">
                             {{#each Item name}}
                             <div class="col-sm-3 placeholder">
@@ -63,8 +63,8 @@
 </template>
 
 <template name="box">
-    <div class="well well-lg mywell {{Color status}}">
-        {{Host hostname}}
+    <div class="well well-lg mywell {{Color status service}}">
+        <strong>{{Host hostname}}</strong>
         <br>
         <strong>{{test}}</strong>
         <br>

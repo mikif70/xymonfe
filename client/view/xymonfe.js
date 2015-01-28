@@ -18,13 +18,13 @@ Template.xymonfe.rendered = function() {
   });
 
   $('#xymonCarousel').on('slide.bs.carousel', function(ev) {
-    var item = ev.relatedTarget.id.split("_")[1];
-    $("#pill_"+item).addClass("active");
-    if ( ( item - 1) < 0 ) {
-      $("#pill_"+totServices).removeClass("active");
-    } else {
-      $("#pill_"+(item-1)).removeClass("active");
-    }
+//    var item = ev.relatedTarget.id.split("_")[1];
+//    $("#pill_"+item).addClass("active");
+//    if ( ( item - 1) < 0 ) {
+//      $("#pill_"+totServices).removeClass("active");
+//    } else {
+//      $("#pill_"+(item-1)).removeClass("active");
+//    }
   });
 
 }
@@ -51,6 +51,10 @@ Template.xymonfe.helpers({
 
   Item: function(name) {
     var tests = Tests.find({ service: name, status: {$ne: "green" }}, { sort: { timestamp: -1}, limit: 9});
+//    if (tests.count() == 0 ) {
+//      $("#pill_"+name).addClass("green"); //.css("color", "green !important");
+//      $("#name_"+name).addClass("green"); //css("color", "green !important");
+//    }
     return tests
   }
 
@@ -61,20 +65,17 @@ Template.box.helpers({
     return host.replace(".tiscali.sys", "");
   },
 
-  Color: function(color) {
-    if (color != 'red' && color != 'yellow') {
-//      console.log("Empty color: ", color);
-      return "";
-    }
+  Color: function(color, service) {
 
-//    console.log(color);
+//    $("#pill_"+service).css("color", color);
+//    $("#name_"+service).css("color", color);
+
     return color;
   },
 
   Time: function(time) {
     var retval;
     var diff = Math.round(now.get() - time);
-//    console.log(diff);
     if (diff < 60 ) {
       retval = diff+" sec";
     } else if ( diff > 60 && diff < 3600 ) {
