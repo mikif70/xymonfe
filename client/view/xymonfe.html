@@ -35,17 +35,11 @@
             <div class="item {{class}}" id="inner_{{id}}">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>{{name}}</h1>
-                        {{#each Box name}}
+                        <h1>{{Name}}</h1>
+                        {{#each Item name}}
                         <div class="row">
                             <div class="col-xs-6 col-sm-3 placeholder">
-                                <h2>
-                                    <span class="label label-primary">
-                                        Host
-                                        {{name}}
-                                        Timestamp
-                                    </span>
-                                </h2>
+                                {{> box}}
                             </div>
                         </div>
                         {{/each}}
@@ -66,4 +60,14 @@
 -->
     </div>
 
+</template>
+
+<template name="box">
+    <div class="well well-lg mywell">
+        {{Host hostname}}
+        <br>
+        <strong>{{test}}</strong>
+        <br>
+        {{timestamp}}
+    </div>
 </template>

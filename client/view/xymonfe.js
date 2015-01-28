@@ -30,7 +30,7 @@ Template.xymonfe.helpers({
       } else {
         s['class'] = "";
       }
-      s['name'] = s['name'].charAt(0).toUpperCase() + s['name'].slice(1);
+      s['Name'] = s['name'].charAt(0).toUpperCase() + s['name'].slice(1);
       ind++;
     });
 
@@ -39,9 +39,20 @@ Template.xymonfe.helpers({
     return servs;
   },
 
+  Item: function(name) {
+    var tests = Tests.find({ service: name }, { sort: { timestamp: -1}, limit: 9});
+    return tests
+  },
+
   Box: function(name) {
     console.log(name);
     return [{name: "1"},{name: "2"},{name: "3"},{name: "4"}]
   }
 
+});
+
+Template.box.helpers({
+  Host: function(host) {
+    return host.replace(".tiscali.sys", "");
+  }
 });

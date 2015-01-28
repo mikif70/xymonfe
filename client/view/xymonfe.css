@@ -71,7 +71,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 800px;
+  height: 760px;
   margin-bottom: 60px;
 }
 
@@ -84,7 +84,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 800px;
+  height: 760px;
   background-color: #aaa;
 }
 
@@ -113,10 +113,6 @@ body {
   margin-right: 10px;
   margin-left: 10px;
 }
-
-/* Labels
----------------------------*/
-
 
 
 /* Featurettes
