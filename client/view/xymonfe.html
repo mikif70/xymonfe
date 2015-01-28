@@ -36,13 +36,13 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>{{Name}}</h1>
-                        {{#each Item name}}
                         <div class="row">
-                            <div class="col-xs-6 col-sm-3 placeholder">
+                            {{#each Item name}}
+                            <div class="col-sm-3 placeholder">
                                 {{> box}}
                             </div>
+                            {{/each}}
                         </div>
-                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
 </template>
 
 <template name="box">
-    <div class="well well-lg mywell">
+    <div class="well well-lg mywell {{Color status}}">
         {{Host hostname}}
         <br>
         <strong>{{test}}</strong>

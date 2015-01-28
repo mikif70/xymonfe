@@ -4,7 +4,7 @@ Template.xymonfe.rendered = function() {
   $('#xymonCarousel').carousel({
     keyboard: false,
     pause: "none",
-    interval: 3000
+    interval: 6000
   });
 
   $('#xymonCarousel').on('slide.bs.carousel', function(ev) {
@@ -40,13 +40,8 @@ Template.xymonfe.helpers({
   },
 
   Item: function(name) {
-    var tests = Tests.find({ service: name }, { sort: { timestamp: -1}, limit: 9});
+    var tests = Tests.find({ service: name, status: {$ne: "green" }}, { sort: { timestamp: -1}, limit: 9});
     return tests
-  },
-
-  Box: function(name) {
-    console.log(name);
-    return [{name: "1"},{name: "2"},{name: "3"},{name: "4"}]
   }
 
 });
@@ -54,5 +49,15 @@ Template.xymonfe.helpers({
 Template.box.helpers({
   Host: function(host) {
     return host.replace(".tiscali.sys", "");
+  },
+
+  Color: function(color) {
+    if (color != 'red' && color != 'yellow') {
+      console.log("Empty color: ", color);
+      return "";
+    }
+
+    console.log(color);
+    return color;
   }
 });
