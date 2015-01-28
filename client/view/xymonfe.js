@@ -18,6 +18,9 @@ Template.xymonfe.rendered = function() {
   });
 
   $('#xymonCarousel').on('slide.bs.carousel', function(ev) {
+    var slideFrom = $(this).find('.active').index();
+    var slideTo = $(ev.relatedTarget)
+    console.log(slideFrom+' => '+slideTo);
 //    var item = ev.relatedTarget.id.split("_")[1];
 //    $("#pill_"+item).addClass("active");
 //    if ( ( item - 1) < 0 ) {
