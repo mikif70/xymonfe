@@ -12,7 +12,7 @@ Template.xymonfe.rendered = function() {
     $('#xymonCarousel').carousel({
       keyboard: false,
       pause: "none",
-      interval: 1000,
+      interval: 6000,
       cycle: true
     });
 
