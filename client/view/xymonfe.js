@@ -18,16 +18,10 @@ Template.xymonfe.rendered = function() {
   });
 
   $('#xymonCarousel').on('slide.bs.carousel', function(ev) {
-    var slideFrom = $(this).find('.active').index();
-    var slideTo = $(ev.relatedTarget)
-    console.log(slideFrom+' => '+slideTo);
-//    var item = ev.relatedTarget.id.split("_")[1];
-//    $("#pill_"+item).addClass("active");
-//    if ( ( item - 1) < 0 ) {
-//      $("#pill_"+totServices).removeClass("active");
-//    } else {
-//      $("#pill_"+(item-1)).removeClass("active");
-//    }
+    var slideFrom = $(this).find('.active')[0].id.split("_")[1];
+    var slideTo = ev.relatedTarget.id.split("_")[1];
+    $("#pill_"+slideTo).addClass("active");
+    $("#pill_"+slideFrom).removeClass("active");
   });
 
 }

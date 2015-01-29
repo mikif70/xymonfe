@@ -77,7 +77,7 @@ body {
 .carousel-caption {
     z-index: 10;
     position: absolute;
-    top: 80px;
+    top: 120px;
 }
 
 /* Declare heights because of positioning of img element */
