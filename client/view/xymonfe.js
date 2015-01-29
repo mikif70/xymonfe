@@ -1,8 +1,6 @@
 var now = new ReactiveVar(new Date() / 1000);
 var interval = Meteor.setInterval(function () {
-  console.log("Old Time: ", now.get());
   now.set(new Date().getTime() / 1000);
-//  console.log("New Time: ", now.get());
 }, 60000);
 
 Template.xymonfe.destroyed = function() {
@@ -10,19 +8,22 @@ Template.xymonfe.destroyed = function() {
 };
 
 Template.xymonfe.rendered = function() {
-  $('#xymonCarousel').carousel({
-    keyboard: false,
-    pause: "none",
-    interval: 6000
-  });
+  $(document).ready(function() {
+    $('#xymonCarousel').carousel({
+      keyboard: false,
+      pause: "none",
+      interval: 1000,
+      cycle: true
+    });
 
-  $('#xymonCarousel').on('slide.bs.carousel', function(ev) {
-    var slideFrom = $(this).find('.active')[0].id.split("_")[1];
-    var slideTo = ev.relatedTarget.id.split("_")[1];
-    $("#pill_"+slideTo).addClass("active");
-    $("#pill_"+slideFrom).removeClass("active");
-  });
+    $('#xymonCarousel').on('slide.bs.carousel', function(ev) {
+      var slideFrom = $(this).find('.active')[0].id.split("_")[1];
+      var slideTo = ev.relatedTarget.id.split("_")[1];
+      $("#pill_"+slideTo).addClass("active");
+      $("#pill_"+slideFrom).removeClass("active");
+    });
 
+  });
 }
 
 Template.xymonfe.helpers({
@@ -40,11 +41,8 @@ Template.xymonfe.helpers({
     var tests = Tests.find({ service: name, status: {$ne: "green" }}, { sort: { timestamp: -1}, limit: 9});
 
     return tests
-  }
+  },
 
-});
-
-Template.box.helpers({
   Host: function(host) {
     return host.replace(".tiscali.sys", "");
   },
