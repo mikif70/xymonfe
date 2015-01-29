@@ -3,3 +3,7 @@ Tracker.autorun(function () {
   Meteor.subscribe('tests');
 //  console.log("services subscribed ");
 });
+
+UI.registerHelper('getServices', function () {
+    return isMobile();
+});

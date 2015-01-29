@@ -1,4 +1,5 @@
 <template name="xymonfe">
+    {{#with Slides}}
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -10,8 +11,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <div class="centered">
                         <ul class="nav nav-pills nav-serv">
-                            {{#each Slide}}
-                            <li role="presentation" id="pill_{{name}}" class="{{class}}"><a>{{Name}}</a></li>
+                            {{#each this.services}}
+                                <li role="presentation" id="pill_{{name}}" class="{{class}}"><a style="color: {{color}};">{{Name}}</a></li>
                             {{/each}}
                         </ul>
                     </div>
@@ -26,26 +27,26 @@
     <div id="xymonCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-          {{#each Slide}}
+          {{#each this.services}}
             <li data-target="#xymonCarousel" data-slide-to="{{id}}" class="{{class}}" id="slide_{{name}}"></li>
           {{/each}}
       </ol>
         <div class="carousel-inner" role="listbox">
-            {{#each Slide}}
-            <div class="item {{class}}" id="inner_{{name}}">
-                <div class="container">
-                    <div class="carousel-caption">
-<!--                    <h1 style="color: black;" id="name_{{name}}">{{Name}}</h1> -->
-                        <div class="row">
-                            {{#each Item name}}
-                            <div class="col-sm-3 placeholder">
-                                {{> box}}
+            {{#each this.services}}
+                <div class="item {{class}}" id="inner_{{name}}">
+                    <div class="container">
+                        <div class="carousel-caption">
+    <!--                    <h1 style="color: black;" id="name_{{name}}">{{Name}}</h1> -->
+                            <div class="row">
+                                {{#each Item name}}
+                                    <div class="col-sm-3 placeholder">
+                                        {{> box}}
+                                    </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
                         </div>
                     </div>
                 </div>
-            </div>
             {{/each}}
         </div>
 <!--
@@ -59,7 +60,7 @@
       </a>
 -->
     </div>
-
+    {{/with}}
 </template>
 
 <template name="box">

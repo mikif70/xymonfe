@@ -20,6 +20,12 @@ body {
   z-index: 20;
 }
 
+.navbar-inverse {
+  background-color: #444;
+  border-color: #999;
+  border-radius: 20px !important;
+}
+
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
@@ -45,10 +51,13 @@ body {
 .centered a { float:left; }
 
 .nav-pills > li > a {
-/*    color: #4aff4a; */
-/*    color: #fff; */
+    color: #4aff4a;
     font-weight: bold;
     font-size: x-large;
+}
+
+.red-pills > li > a {
+    color: #ff4545;
 }
 
 .nav-pills > li > a:hover,
@@ -83,7 +92,8 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 760px;
-  background-color: #aaa;
+/*  background-color: #aaa; */
+    background: url("img/wallpaper.jpg") left center;
 }
 
 /*

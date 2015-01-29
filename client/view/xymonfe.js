@@ -2,9 +2,8 @@ var now = new ReactiveVar(new Date() / 1000);
 var interval = Meteor.setInterval(function () {
   console.log("Old Time: ", now.get());
   now.set(new Date().getTime() / 1000);
-  console.log("New Time: ", now.get());
+//  console.log("New Time: ", now.get());
 }, 60000);
-var totServices = 0;
 
 Template.xymonfe.destroyed = function() {
   Meteor.clearInterval(interval);
@@ -27,27 +26,55 @@ Template.xymonfe.rendered = function() {
 }
 
 Template.xymonfe.helpers({
-  Slide: function() {
-    var servs = Services.find().fetch();
-    var ind = 0;
-    servs.forEach(function(s) {
-      s['id'] = ind;
-      if (ind === 0) {
-        s['class'] = "active";
-      } else {
-        s['class'] = "";
-      }
-      s['Name'] = s['name'].charAt(0).toUpperCase() + s['name'].slice(1);
-      ind++;
-    });
+  Slides: function() {
+    var servs = getServices();
 
-    totServices = ind-1;
+    console.log("SLIDES: ",servs);
 
-    return servs;
+    if (servs === null) {
+      return servs
+    } else {
+      return {services: servs};
+    }
+  },
+
+  Slide: function(services) {
+    console.log("Slide: ",services);
+
+    return services;
+  },
+
+  Pills: function(services) {
+    console.log("Pills: ",services);
+
+    return services;
+  },
+
+  Status: function(name) {
+
+    if (Tests.findOne({ service: name, status: "red"}) !== undefined) {
+      console.log("RED");
+      $("#pill_"+name).addClass("red-pills");
+      $("#pill_"+name).removeClass("yellow-pills");
+      $("#pill_"+name).removeClass("green-pills");
+    } else if ( Tests.findOne({ service: name, status: "yellow"}) !== undefined ) {
+      console.log("YELLOW");
+      $("#pill_"+name).addClass("yellow-pills");
+      $("#pill_"+name).removeClass("red-pills");
+      $("#pill_"+name).removeClass("green-pills");
+    } else {
+      console.log("GREEN");
+      $("#pill_"+name).addClass("green-pills");
+      $("#pill_"+name).removeClass("red-pills");
+      $("#pill_"+name).removeClass("yellow-pills");
+
+    }
+    return name.charAt(0).toUpperCase() + name.slice(1);
   },
 
   Item: function(name) {
     var tests = Tests.find({ service: name, status: {$ne: "green" }}, { sort: { timestamp: -1}, limit: 9});
+//    console.log("Item: ",name);
 //    if (tests.count() == 0 ) {
 //      $("#pill_"+name).addClass("green"); //.css("color", "green !important");
 //      $("#name_"+name).addClass("green"); //css("color", "green !important");
