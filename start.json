@@ -5,7 +5,7 @@
     "log_date_format"  : "YYYY-MM-DD HH:mm Z",
     "exec_mode"  : "cluster_mode",
     "watch"       : true,
-    "instance"    : 3,
+    "instance"    : 2,
     "cwd"         : "/root/xymonfe.exe/bundle",
     "log_file"   : "/var/log/meteor/xymonfe.log",
     "out_file":"/var/log/meteor/xymonfe-out.log",
