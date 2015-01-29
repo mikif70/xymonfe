@@ -3,7 +3,7 @@ var interval = Meteor.setInterval(function () {
   console.log("Old Time: ", now.get());
   now.set(new Date().getTime() / 1000);
   console.log("New Time: ", now.get());
-}, 30000);
+}, 60000);
 var totServices = 0;
 
 Template.xymonfe.destroyed = function() {
