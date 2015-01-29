@@ -5,11 +5,43 @@ var interval = Meteor.setInterval(function () {
 //  console.log("New Time: ", now.get());
 }, 60000);
 
+getServices = function() {
+  var servs = Services.find().fetch();
+
+  if (servs.length <= 0) {
+     return null;
+  }
+
+  var ind = 0;
+  servs.forEach(function(s) {
+    s['id'] = ind;
+    if (ind === 0) {
+      s['class'] = "active";
+    } else {
+      s['class'] = "";
+    }
+    s['Name'] = s['name'].charAt(0).toUpperCase() + s['name'].slice(1);
+    if (Tests.findOne({ service: s['name'], status: "red"}) !== undefined) {
+      s['color'] = "red";
+    } else if ( Tests.findOne({ service:  s['name'], status: "yellow"}) !== undefined ) {
+      s['color'] = "yellow";
+    } else {
+      s['color'] = "green";
+    }
+
+    ind++;
+  });
+
+  return servs;
+}
+
 Template.xymonfe.destroyed = function() {
   Meteor.clearInterval(interval);
+  Meteor.clearInterval(rotate);
 };
 
 Template.xymonfe.rendered = function() {
+
   $('#xymonCarousel').carousel({
     keyboard: false,
     pause: "none",
@@ -26,6 +58,10 @@ Template.xymonfe.rendered = function() {
 }
 
 Template.xymonfe.helpers({
+  Slide: function() {
+    return getServices();
+  },
+
   Slides: function() {
     var servs = getServices();
 

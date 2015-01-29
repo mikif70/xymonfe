@@ -1,5 +1,4 @@
 <template name="xymonfe">
-    {{#with Slides}}
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -8,7 +7,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <div class="centered">
                         <ul class="nav nav-pills nav-serv">
-                            {{#each this.services}}
+                            {{#each Slide}}
                                 <li role="presentation" id="pill_{{name}}" class="{{class}}"><a style="color: {{color}};">{{Name}}</a></li>
                             {{/each}}
                         </ul>
@@ -24,12 +23,12 @@
     <div id="xymonCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-          {{#each this.services}}
+          {{#each Slide}}
             <li data-target="#xymonCarousel" data-slide-to="{{id}}" class="{{class}}" id="slide_{{name}}"></li>
           {{/each}}
       </ol>
         <div class="carousel-inner" role="listbox">
-            {{#each this.services}}
+            {{#each Slide}}
                 <div class="item {{class}}" id="inner_{{name}}">
                     <div class="container">
                         <div class="carousel-caption">
@@ -46,7 +45,6 @@
             {{/each}}
         </div>
     </div>
-    {{/with}}
 </template>
 
 <template name="box">
