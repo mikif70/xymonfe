@@ -28,6 +28,9 @@ getServices = function() {
     } else if ( Tests.findOne({ service:  s['name'], status: "yellow"}) !== undefined ) {
       obj['color'] = "yellow";
       retval.push(obj);
+    } else if ( Tests.findOne({ service:  s['name'], status: "purple"}) !== undefined ) {
+      obj['color'] = "purple";
+      retval.push(obj);
     } else {
       servs.splice(ind, 1);
       obj['color'] = "green";
