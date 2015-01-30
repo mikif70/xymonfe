@@ -1,8 +1,6 @@
 var now = new ReactiveVar(new Date() / 1000);
 var interval = Meteor.setInterval(function () {
-  console.log("Old Time: ", now.get());
   now.set(new Date().getTime() / 1000);
-//  console.log("New Time: ", now.get());
 }, 60000);
 
 getServices = function() {
@@ -13,26 +11,34 @@ getServices = function() {
   }
 
   var ind = 0;
+  var retval = [];
   servs.forEach(function(s) {
-    s['id'] = ind;
+    var obj = {};
+    obj['name'] = s['name'];
+    obj['id'] = ind;
     if (ind === 0) {
-      s['class'] = "active";
+      obj['class'] = "active";
     } else {
-      s['class'] = "";
+      obj['class'] = "";
     }
-    s['Name'] = s['name'].charAt(0).toUpperCase() + s['name'].slice(1);
+    obj['Name'] = s['name'].charAt(0).toUpperCase() + s['name'].slice(1);
     if (Tests.findOne({ service: s['name'], status: "red"}) !== undefined) {
-      s['color'] = "red";
+      obj['color'] = "red";
+      retval.push(obj);
     } else if ( Tests.findOne({ service:  s['name'], status: "yellow"}) !== undefined ) {
-      s['color'] = "yellow";
+      obj['color'] = "yellow";
+      retval.push(obj);
     } else {
-      s['color'] = "green";
+      servs.splice(ind, 1);
+      obj['color'] = "green";
+//      retval.push(obj);
     }
 
     ind++;
   });
 
-  return servs;
+
+  return retval;
 }
 
 Template.xymonfe.destroyed = function() {
@@ -73,7 +79,7 @@ Template.xymonfe.helpers({
   },
 
   Item: function(name) {
-    var tests = Tests.find({ service: name, status: {$ne: "green" }}, { sort: { timestamp: -1}, limit: 9});
+    var tests = Tests.find({ service: name, status: {$ne: "green" }}, { sort: { timestamp: -1}, limit: 12});
 
     return tests
   }
