@@ -92,8 +92,8 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 760px;
-/*  background-color: #aaa; */
-    background: url("img/wallpaper.jpg") left center;
+  background-color: #222;
+/*    background: url("img/wallpaper.jpg") left center; */
 }
 
 /*
